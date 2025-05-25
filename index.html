@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AndroidChat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="chat-header">
+            <div class="user-info">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="status-info">
+                    <h1>AndroidChat</h1>
+                    <p class="connection-status">Conectado: <span id="connected-users">1</span> usuário(s)</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="settings-btn" class="icon-btn">
+                    ⚙️
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <!-- Mensagens serão adicionadas aqui via JavaScript -->
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+            <button id="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de configurações -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Configurações</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="username-input">Nome de usuário</label>
+                    <input type="text" id="username-input" placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="theme-select">Tema</label>
+                    <select id="theme-select">
+                        <option value="light">Claro</option>
+                        <option value="dark">Escuro</option>
+                        <option value="blue">Azul</option>
+                        <option value="green">Verde</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="room-id">ID da Sala</label>
+                    <div class="room-id-container">
+                        <input type="text" id="room-id" readonly>
+                        <button id="copy-room-id">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="join-room">Entrar em uma sala</label>
+                    <div class="join-room-container">
+                        <input type="text" id="join-room-input" placeholder="Cole o ID da sala">
+                        <button id="join-room-btn">Entrar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-settings">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <p id="notification-text"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
